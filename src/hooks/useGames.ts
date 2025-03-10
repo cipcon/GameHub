@@ -17,6 +17,7 @@ export interface Game {
 }
 
 const useGames = (selectedGenres: Genre | null) =>
+  // I have 3 parameters here, the first one is the endpoint, the second one is the query parameters, and the third one is the dependencies
   useData<Game>("/games", { params: { genres: selectedGenres?.id } }, [
     selectedGenres?.id,
   ]);
